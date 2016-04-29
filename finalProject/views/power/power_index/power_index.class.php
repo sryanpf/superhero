@@ -7,7 +7,7 @@ class PowerIndex extends PowerIndexView {
         ?>
 <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
                   <link type='text/css' rel='stylesheet' href='<?= BASE_URL ?>/www/css/app_style.css' />
-        <p><a href="<?= BASE_URL ?>">Home</a></p>
+        <p><a href="<?= BASE_URL ?>" style=' color: gray; text-decoration: none; font-size: 50px; text-align: left;'>Home</a></p>
         <div id="main-header"> Our Power Library</div>
 
         <div class="grid-container">
@@ -27,7 +27,7 @@ class PowerIndex extends PowerIndexView {
                         echo "<div class='row'>";
                     }
 
-                    echo "<div class='col'><p><a href='", BASE_URL, "/power/detail/$id'></a><span>$name<br>$ability<br>$price<br>$description<br>" . "</span></p></div>";
+                    echo "<div class='col'><p><a href='", BASE_URL, "/power/detail/$id'><img src=' " .$image . " '></a><span>$name<br></span></p></div>";
                     ?>
                     <?php
                     if ($i % 6 == 5 || $i == count($powers) - 1) {
