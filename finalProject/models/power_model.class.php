@@ -67,7 +67,7 @@ class PowerModel {
 
         //loop through all rows in the returned recordsets
         while ($obj = $query->fetch_object()) {
-            $power = new Power($obj->id,stripslashes($obj->name), stripslashes($obj->ability), stripslashes($obj->description), stripslashes($obj->price), stripslashes($obj->quantAvailable));
+            $power = new Power($obj->id,stripslashes($obj->name), stripslashes($obj->ability), stripslashes($obj->description), stripslashes($obj->price), stripslashes($obj->quantAvailable), stripslashes($obj->image));
 
             //set the id for the power
             $power->setId($obj->id);
@@ -112,7 +112,7 @@ class PowerModel {
 
         //loop through all rows in the returned recordsets
         while ($obj = $query->fetch_object()) {
-            $power = new Power($obj->id,$obj->name, $obj->ability, $obj->description, $obj->price);
+            $power = new Power($obj->id,$obj->name, $obj->ability, $obj->description, $obj->price, stripslashes($obj->image));
 
             //set the id for the power
             $power->setId($obj->id);
@@ -139,7 +139,7 @@ class PowerModel {
 
             //create a power object
             $power = new Power(stripslashes($obj->name), stripslashes($obj->ability), stripslashes($obj->description), 
-                    stripslashes($obj->price), stripslashes($obj->quantAvailable));
+                    stripslashes($obj->price), stripslashes($obj->quantAvailable), stripslashes($obj->image) );
 
             //set the id for the power
             $power->setId($obj->id);
